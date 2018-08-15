@@ -13,17 +13,19 @@ public class Student {
     private int age;
     private int enrolNum;
     private Mentor mentor;
+    private Course course;
 
     // Dummy constructor
         public Student(){
     }
 
     // Constructor
-        public Student(String name, int age, int enrolNum, Mentor mentor) {
+        public Student(String name, int age, int enrolNum, Mentor mentor, Course course) {
         this.name = name;
         this.age = age;
         this.enrolNum = enrolNum;
         this.mentor = mentor;
+        this.course = course;
     }
 
     @Id
@@ -73,5 +75,15 @@ public class Student {
 
     public void setMentor(Mentor mentor) {
         this.mentor = mentor;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "course_id", nullable = false)
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
     }
 }
