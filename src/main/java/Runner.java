@@ -17,7 +17,6 @@ public class Runner {
         DBHelper.save(mentor1);
         DBHelper.save(mentor2);
 
-
         //Update mentor
         mentor1.setName("Dr X");
         DBHelper.update(mentor1);
@@ -29,6 +28,18 @@ public class Runner {
 
         //Create a Student
         Student student1 = new Student("Eric Banner",22,1556739);
+        Student student2 = new Student("Donny Darko", 16, 68009);
+
+        //Save student to db
+        DBHelper.save(student1);
+        DBHelper.save(student2);
+
+        //Update student
+        student1.setAge(33);
+        DBHelper.update(student1);
+
+        //Delete student
+        DBHelper.delete(student1);
 
 
 
