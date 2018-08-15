@@ -12,6 +12,7 @@
         <property name="connection.pool_size">1</property>
         <property name="show_sql">true</property>
         <mapping class = "models.Mentor"/>
+        <mapping class = "models.Student"/>
 
     </session-factory>
 </hibernate-configuration>
