@@ -12,16 +12,18 @@ public class Student {
     private String name;
     private int age;
     private int enrolNum;
+    private Mentor mentor;
 
     // Dummy constructor
         public Student(){
     }
 
     // Constructor
-        public Student(String name, int age, int enrolNum) {
+        public Student(String name, int age, int enrolNum, Mentor mentor) {
         this.name = name;
         this.age = age;
         this.enrolNum = enrolNum;
+        this.mentor = mentor;
     }
 
     @Id
@@ -60,5 +62,16 @@ public class Student {
 
     public void setEnrolNum(int enrolNum) {
         this.enrolNum = enrolNum;
+    }
+
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "mentor_id", nullable = false)
+    Mentor getMentor() {
+        return mentor;
+    }
+
+    public void setMentor(Mentor mentor) {
+        this.mentor = mentor;
     }
 }

@@ -10,6 +10,7 @@ public class Mentor {
 
     private int id;
     private String name;
+    private Student student;
 
     //Dummy Constructor
     public Mentor() {
@@ -39,5 +40,14 @@ public class Mentor {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @OneToOne(mappedBy = "mentor", fetch = FetchType.LAZY)
+    Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
     }
 }
